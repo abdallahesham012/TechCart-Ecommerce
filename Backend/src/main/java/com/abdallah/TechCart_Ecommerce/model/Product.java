@@ -12,12 +12,12 @@ import java.util.Date;
 
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-@Table(name="products")
+@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private String description;
     private String brand;
@@ -28,4 +28,9 @@ public class Product {
     private boolean productAvailable;
     private int stockQuantity;
 
+    private String imageName;
+    private String imageType;
+
+    @Lob
+    private byte[] imageData;
 }
